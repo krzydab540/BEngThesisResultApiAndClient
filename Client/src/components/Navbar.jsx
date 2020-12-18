@@ -17,7 +17,7 @@ export default function Navbar() {
         <ul></ul>
         <ul className="nav-link-wrapper"><Link to={'/home'} className="nav-link"> Home </Link></ul>
         <ul className="nav-link-wrapper"><Link to={'/contact'} className="nav-link">Contact</Link></ul>
-        <ul className="nav-link-wrapper"><Link to={'/about'} className="nav-link">About</Link></ul>
+        <ul className="nav-link-wrapper"><Link to={'/myresults'} className="nav-link">My Result</Link></ul>
         <ul className="nav-link-wrapper"><Link to={'/login'} className="nav-link">Login</Link></ul>    
         <ul></ul>
       </nav>
