@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <h1>BLOOD ANALYSIS REPORT</h1>
+    <h3>Sample Hospital Laboratory, Gliwice Zwycięstwa St., 4/20</h3>
+    <table>
+        <tbody>
+            <tr>
+                <td>Result ID:</td>
+                <td>@Model.IdResult</td>
+            </tr>
+            <tr>
+                <td>White blood cell count:</td>
+                <td>@Model.Wbc</td>
+            </tr>
+            <tr>
+
+                <td>Red blood cell count:</td>
+                <td>@Model.Rbc</td>
+            </tr>
+            <tr>
+                <td>Platelet count:</td>
+                <td>@Model.Pc</td>
+            </tr>
+            <tr>
+                <td>Another sample parameter count:</td>
+                <td>@Model.Asp</td>
+            </tr>
+            <tr>
+                <td>Date:</td>
+                <td>@Model.DateOfPerform</td>
+            </tr>
+            <tr>
+                <td>Conducted by:</td>
+                <td>@Model.Technician</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>

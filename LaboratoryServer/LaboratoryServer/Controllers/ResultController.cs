@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Wkhtmltopdf.NetCore;
 using System.Text.Json;
+using System.Text.RegularExpressions;
+using Newtonsoft.Json;
+using System.Reflection;
+//using Newtonsoft.Json;
 
 namespace LaboratoryServer.Controllers
 {
@@ -67,13 +71,59 @@ namespace LaboratoryServer.Controllers
             };
 
 
-            var jsonList =  JsonSerializer.Serialize(resultList);
+            //var jsonList = JsonSerializer.Serialize(resultList);
+            var jsonList = JsonConvert.SerializeObject(resultList);
 
             IActionResult response = Unauthorized();
             response = Ok(new { results = resultList });
 
             return response;
         }
+
+        [HttpGet]
+        [Route("Get/1")]
+        public IActionResult GetSpecificResult()
+        {
+            var labRes = new Result
+            {
+                IdResult = 1,
+                Wbc = 120,
+                Rbc = 430,
+                Pc = 99,
+                Asp = 12,
+                DateOfPerform = "12/03/2020",
+                Technician = "dr Remigiusz Nałkowski"
+            };
+             
+
+            string templateFile = System.IO.File.ReadAllText("D:/Fork/BEngThesisResultApiAndClient/BEngThesisResultApiAndClient/LaboratoryServer/LaboratoryServer/Views/Result/BloodResult.html");
+
+            //var json = JsonConvert.SerializeObject(labRes);
+            //var dictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+
+            PropertyInfo[] infos = labRes.GetType().GetProperties();
+            Dictionary<string, string> dictionary = new Dictionary<string, string>();
+
+            foreach (PropertyInfo info in infos)
+            {
+                dictionary.Add(info.Name, info.GetValue(labRes, null).ToString());
+            }
+
+
+
+            foreach (var property in dictionary)
+            {
+                templateFile = templateFile.Replace("@Model." + property.Key, property.Value );
+            }
+
+
+            IActionResult response = Unauthorized();
+            response = Ok(new { htmlResult = templateFile});
+
+            return response;
+        }
+
+
 
 
     }
