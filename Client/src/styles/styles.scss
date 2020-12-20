@@ -123,7 +123,12 @@
   padding-top: 10vh;
 }
 .address-container {
-  padding-top: 15vh ;
+  padding-top: 15vh;
   text-align: center;
   @include column-layout(left);
+}
+.result-list-item {
+  .li {
+    display: inline-block;
+  }
 }

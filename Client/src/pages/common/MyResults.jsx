@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GenerateResult from "./GenerateResult"
 
 class MyResults extends Component {
   async componentDidMount(props) {
@@ -15,16 +16,20 @@ class MyResults extends Component {
       // console.log(listOfRes.results);
 
       this.listItems = listOfRes.results.map((result) => (
-        <li className="result-list-item" key={result.idResult.toString}>
-          {result.technician}
+        <li className="result-list-item" key={result.idResult}>
+          <div>{result.idResult.toString}</div>
+          <div>{result.dateOfPerform}</div>
+          <div>{result.technician}</div>
+          <GenerateResult/>
         </li>
       ));
       // console.log(listItems);
-
     } catch (e) {
       console.log(e);
     }
   }
+
+  // TODO: You need to reload page in order to view list
 
   render() {
     return (
