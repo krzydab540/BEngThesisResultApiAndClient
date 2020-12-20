@@ -20,7 +20,7 @@ class MyResults extends Component {
           <div>{result.idResult.toString}</div>
           <div>{result.dateOfPerform}</div>
           <div>{result.technician}</div>
-          <GenerateResult/>
+          <button onClick={GenerateResult}></button>
         </li>
       ));
       // console.log(listItems);

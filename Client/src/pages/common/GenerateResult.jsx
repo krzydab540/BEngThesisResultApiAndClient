@@ -1,20 +1,33 @@
 import React, { Component } from "react";
 import jsPDF from "jspdf";
-import { PureComponent } from "react";
+import { pdf } from "@react-pdf/renderer";
+// import { PureComponent } from "react";
 
-export default class GenerateResult extends PureComponent {
+export default async function GenerateResult() {
   // var htmlContent = require('./samplePDF');
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  let res = await fetch("https://localhost:44301/api/Result/Get/1", {
+    method: "get",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  });
 
-  jsPDFGenerator = () => {
+  let result = await res.json();
+  // console.log(result.htmlResult);
+  GeneratePdf(result.htmlResult)
+}
 
-  };
+function GeneratePdf(inputString){
+  var doc = new jsPDF("p", "em", "a4", false);
+  doc.addFont("Roboto-Regular.ttf", "Roboto-Regular", "normal");
+  doc.setFont("Roboto-Regular");
+  doc.setFontSize(10);
+  doc.setTextColor(0, 0, 0); //black
+  doc.html($(inputString));
 
-  render() {
-    return <button onClick={this.jsPDFGenerator}>Generate PDF</button>;
-  }
+
+  doc.text(33, 33, "SAMPLE TEXT");
+  doc.save("sample-document.pdf");
 }
