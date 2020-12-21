@@ -4,10 +4,10 @@ import { render } from "@testing-library/react";
 import { observer } from 'mobx-react';
 
 import Home from '../pages/common/Home';
-import About from '../pages/common/About';
 import Contact from '../pages/common/Contact';
 import Login from '../pages/common/Login';
 import MyResults from '../pages/common/MyResults';
+import TestResult from '../pages/common/TestResult';
 
 export default function Navbar() {
   return (
@@ -26,10 +26,9 @@ export default function Navbar() {
       <Switch>
           <Route path='/home' component={Home} />
           <Route path='/contact' component={Contact} />
-          <Route path='/about' component={About} />
           <Route path='/login' component={Login} />
           <Route path='/myresults' component={MyResults} />
-          {/* <Route path='/result' component={Result} /> */}
+          <Route path='/testresult' component={TestResult} />
       </Switch>
     </div>
   </Router>

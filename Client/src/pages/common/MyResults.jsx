@@ -17,10 +17,10 @@ class MyResults extends Component {
 
       this.listItems = listOfRes.results.map((result) => (
         <li className="result-list-item" key={result.idResult}>
-          <div>{result.idResult.toString}</div>
+          <div>{result.idResult}</div>
           <div>{result.dateOfPerform}</div>
           <div>{result.technician}</div>
-          <button onClick={GenerateResult}></button>
+          <button className = "btn btn-info" onClick={GenerateResult}></button>
         </li>
       ));
       // console.log(listItems);

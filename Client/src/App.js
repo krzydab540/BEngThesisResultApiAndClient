@@ -9,7 +9,6 @@ import { observer } from 'mobx-react';
 import Navbar from './components/Navbar';
 
 import Home from './pages/common/Home';
-import About from './pages/common/About';
 import Contact from './pages/common/Contact';
 import Login from './pages/common/Login';
 // import Result from './pages/common/Result';

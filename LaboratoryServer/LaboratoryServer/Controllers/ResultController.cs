@@ -94,12 +94,9 @@ namespace LaboratoryServer.Controllers
                 DateOfPerform = "12/03/2020",
                 Technician = "dr Remigiusz Nałkowski"
             };
-             
+
 
             string templateFile = System.IO.File.ReadAllText("D:/Fork/BEngThesisResultApiAndClient/BEngThesisResultApiAndClient/LaboratoryServer/LaboratoryServer/Views/Result/BloodResult.html");
-
-            //var json = JsonConvert.SerializeObject(labRes);
-            //var dictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
 
             PropertyInfo[] infos = labRes.GetType().GetProperties();
             Dictionary<string, string> dictionary = new Dictionary<string, string>();
@@ -109,16 +106,15 @@ namespace LaboratoryServer.Controllers
                 dictionary.Add(info.Name, info.GetValue(labRes, null).ToString());
             }
 
-
-
             foreach (var property in dictionary)
             {
-                templateFile = templateFile.Replace("@Model." + property.Key, property.Value );
+                templateFile = templateFile.Replace("@Model." + property.Key, property.Value);
             }
 
+            templateFile = templateFile.Replace("\n", "").Replace("\r", "");
 
             IActionResult response = Unauthorized();
-            response = Ok(new { htmlResult = templateFile});
+            response = Ok(new { htmlResult = templateFile });
 
             return response;
         }
