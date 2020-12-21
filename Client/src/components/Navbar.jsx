@@ -28,7 +28,7 @@ export default function Navbar() {
           <Route path='/contact' component={Contact} />
           <Route path='/login' component={Login} />
           <Route path='/myresults' component={MyResults} />
-          <Route path='/testresult' component={TestResult} />
+          {/* <Route path='/testresult' component={TestResult} /> */}
       </Switch>
     </div>
   </Router>

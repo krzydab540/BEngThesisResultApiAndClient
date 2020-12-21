@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GenerateResult from "./GenerateResult"
+import TestResult from "./TestResult"
 
 class MyResults extends Component {
   async componentDidMount(props) {
@@ -37,6 +38,7 @@ class MyResults extends Component {
         <div className="padded-container">
           <ul className="result-list">{this.listItems}</ul>
         </div>
+        <TestResult/>
       </div>
     );
   }
