@@ -4,6 +4,11 @@ import Pdf from "react-to-pdf";
 import GenerateResult from "./GenerateResult";
 
 const ref = React.createRef();
+const divStyle = {
+  // color: 'black',
+  // fontFamily: "Times New Roman",
+  // padding: 10 ,
+};
 
 // export default function MakePdf() {
 class TestResult extends React.Component {
@@ -29,8 +34,8 @@ class TestResult extends React.Component {
         <Pdf targetRef={ref} filename="code-example.pdf">
           {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
         </Pdf>
-        <div ref={ref}>
-          <div dangerouslySetInnerHTML={{ __html: this.state.textResult }} />
+        <div ref={ref} className="page">
+          <div  style={divStyle}  dangerouslySetInnerHTML={{ __html: this.state.textResult }} />
         </div>
       </div>
     );
