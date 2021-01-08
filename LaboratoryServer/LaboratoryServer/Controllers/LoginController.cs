@@ -46,19 +46,17 @@ namespace LaboratoryServer.Controllers
             if (user != null)
             {
                 var tokenStr = GenerateJSONWebToken(user);
-                response = Ok(new { token = tokenStr });
+                response = Ok(new { token = tokenStr, userId = user.Id });
             }
             return response;
         }
 
         private UserModel AuthenticateUser(UserModel login)
         {
+
             UserModel user = null;
-            //TODO: Change to LINQ
-            if (login.Email == "asd" && login.Password == "pass")
-            {
-                user = new UserModel { Email = "asd", Password = "pass" };
-            }
+            user = _context.UserModels.SingleOrDefault(user => user.Email == login.Email && user.Password == login.Password);
+
             return user;
         }
 

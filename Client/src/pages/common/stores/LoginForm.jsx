@@ -54,13 +54,14 @@ class LoginForm extends React.Component {
           email: this.state.email,
           password: this.state.password,
         }),
-        // this will send username and pass to API which will be checked in DB then checked if exists and create session
       });
 
       let result = await res.json(); // here is the token
       console.log(result.token);
+      console.log(result.userId);
 
       localStorage.setItem("token", result.token);
+      localStorage.setItem("userId", result.userId);
 
       // if (result && result.success) {
       //   UserStore.isLoggedIn = true;
