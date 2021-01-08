@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from "react";
 
-export default function Home() {
+export default function Unauthorized() {
   return (
-<div>
-    You have to be logged in in order to view this page.
-</div>
+    <div className="padding-center">
+      <h1 className="padded-header">You have to be logged in in order to view this page.</h1>
+      <img src={"images/lockicon.png"} alt="lock-icon" className="lock-icon" />
+    </div>
   );
 }

@@ -63,11 +63,11 @@ namespace LaboratoryServer.Controllers
 
             List<Result> resultList = new List<Result>
             {
-                new Result{IdResult = 1, IdPatient=1 ,Wbc=1, Rbc=1, Pc=1,  Asp=1, DateOfPerform="1/12/12", Technician="dr Mirosław Ogórek" },
-                new Result{IdResult = 2, IdPatient=2 ,Wbc=1, Rbc=1, Pc=1,  Asp=1, DateOfPerform="2/12/12", Technician="dr Hilary Stary" },
-                new Result{IdResult = 3, IdPatient=3 ,Wbc=1, Rbc=1, Pc=1,  Asp=1, DateOfPerform="3/12/12", Technician="dr Antoni Grzybiński" },
-                new Result{IdResult = 4, IdPatient=4 ,Wbc=1, Rbc=1, Pc=1,  Asp=1, DateOfPerform="4/12/12", Technician="dr Wacław Tablica" },
-                new Result{IdResult = 5, IdPatient=5 ,Wbc=1, Rbc=1, Pc=1,  Asp=1, DateOfPerform="5/12/12", Technician="dr Tadeusz Wajcha-Przełóż" }
+                new Result{IdResult = 1, IdPatient=1 ,Wbc=1, Rbc=1, Pc=1,  Asp=1, DateOfPerform="1/12/12", Technician="dr Paweł Jakubowski" },
+                new Result{IdResult = 2, IdPatient=2 ,Wbc=1, Rbc=1, Pc=1,  Asp=1, DateOfPerform="2/12/12", Technician="dr Przemysław Czerwiński" },
+                new Result{IdResult = 3, IdPatient=3 ,Wbc=1, Rbc=1, Pc=1,  Asp=1, DateOfPerform="3/12/12", Technician="dr Kamil Kołecki" },
+                new Result{IdResult = 4, IdPatient=4 ,Wbc=1, Rbc=1, Pc=1,  Asp=1, DateOfPerform="4/12/12", Technician="dr Łukasz Szymczak" },
+                new Result{IdResult = 5, IdPatient=5 ,Wbc=1, Rbc=1, Pc=1,  Asp=1, DateOfPerform="5/12/12", Technician="dr Radosław Mirosław" }
             };
 
 

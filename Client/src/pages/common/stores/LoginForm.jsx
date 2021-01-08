@@ -58,9 +58,9 @@ class LoginForm extends React.Component {
       });
 
       let result = await res.json(); // here is the token
-      console.log(result.token)
+      console.log(result.token);
 
-      localStorage.setItem('token', result.token)
+      localStorage.setItem("token", result.token);
 
       // if (result && result.success) {
       //   UserStore.isLoggedIn = true;
@@ -81,11 +81,11 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form">
-        Login form
+      <div className="padding-center">
+        <h1 className="padded-header"> Sign in in order to proceed:</h1>
         <InputField
           type="text"
-          placeholder="email"
+          placeholder="E-mail"
           value={this.state.email ? this.state.email : ""}
           onChange={(val) => this.setInputValue("email", val)}
         />

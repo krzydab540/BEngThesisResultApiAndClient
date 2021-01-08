@@ -10,7 +10,8 @@ const divStyle = {
   // padding: 10 ,
 };
 
-// export default function MakePdf() {
+const hardText = "<div><h1>BLOOD ANALYSIS REPORT</h1><h3>Sample Hospital Laboratory, Gliwice Zwycięstwa St., 4/20</h3><table><tr><td>Result ID:</td><td>1</td></tr><tr><td>WBC:</td><td>4.1 × 10^3</td></tr><tr><td>RBC:</td><td>3.5 × 10^3</td></tr><tr><td>HGB:</td><td>9.8</td></tr><tr><td>HCT:</td><td>28.8</td></tr><tr><td>Platelets:</td><td><10 × 10^3</td></tr><tr><td>Segs (%):</td><td>53 %</td></tr><tr><td>Blasts (%):</td><td>7 %</td></tr><tr><td>Date:</td><td>12/03/2020</td></tr><tr><td>Conducted by:</td><td>dr Remigiusz Nałkowski</td></tr></table></div>"
+
 class TestResult extends React.Component {
   constructor() {
     super();
@@ -27,15 +28,14 @@ class TestResult extends React.Component {
     });
   }
 
-  // var hardText = "<div>    <h1>BLOOD ANALYSIS REPORT</h1>    <h3>Sample Hospital Laboratory, Gliwice Zwycięstwa St., 4/20</h3>    <table>            <tr>                <td>Result ID:</td>                <td>1</td>            </tr>            <tr>                <td>White blood cell count:</td>                <td>120</td>            </tr>            <tr>                <td>Red blood cell count:</td>                <td>430</td>            </tr>            <tr>                <td>Platelet count:</td>                <td>99</td>            </tr>            <tr>                <td>Another sample parameter count:</td>                <td>12</td>            </tr>            <tr>                <td>Date:</td>                <td>12/03/2020</td>            </tr>            <tr>                <td>Conducted by:</td>                <td>dr Remigiusz Nałkowski</td>            </tr>    </table></div>"
   render() {
     return (
       <div>
-        <Pdf targetRef={ref} filename="code-example.pdf">
-          {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+        <Pdf targetRef={ref} filename="Test_result.pdf">
+          {({ toPdf }) => <div className="middle-btn-wrapper"> <button className="btn btn-primary middle-btn" onClick={toPdf}>Download as PDF</button></div>}
         </Pdf>
         <div ref={ref} className="page">
-          <div  style={divStyle}  dangerouslySetInnerHTML={{ __html: this.state.textResult }} />
+          <div  style={divStyle}  dangerouslySetInnerHTML={{ __html: hardText }} />
         </div>
       </div>
     );

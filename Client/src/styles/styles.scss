@@ -122,15 +122,27 @@
   padding-right: 10vw;
   padding-top: 10vh;
 }
+
+.padded-container-sides{
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
 .address-container {
   padding-top: 15vh;
   text-align: center;
   @include column-layout(left);
 }
 .result-list-item {
-  .li {
-    display: inline-block;
+  display: flex;
+  .result-component{ 
+    margin: 5vh;
   }
+
+}
+
+.result-technician{
+  width: 35vh;
 }
 
 .page {
@@ -142,4 +154,19 @@
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.padding-center{
+  padding-top: 10vh;
+  text-align: center;
+}
+
+.spacer{
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+.lock-icon{
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 }

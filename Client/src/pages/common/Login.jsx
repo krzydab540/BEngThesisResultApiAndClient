@@ -65,7 +65,7 @@ class Login extends Component {
     if (UserStore.loading) {
       return (
         <div className="app">
-          <div className="container">Loading please wait</div>
+          <div className="container">Loading, please wait</div>
         </div>
       );
     }

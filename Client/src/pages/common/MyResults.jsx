@@ -14,14 +14,14 @@ class MyResults extends Component {
       });
 
       let listOfRes = await res.json();
-      // console.log(listOfRes.results);
+      console.log(listOfRes.results);
 
       this.listItems = listOfRes.results.map((result) => (
         <li className="result-list-item" key={result.idResult}>
-          <div>{result.idResult}</div>
-          <div>{result.dateOfPerform}</div>
-          <div>{result.technician}</div>
-          <button className = "btn btn-info" onClick={GenerateResult}></button>
+          <div className="result-component">{result.idResult}</div>
+          <div className="result-component">{result.dateOfPerform}</div>
+          <div className="result-component result-technician">{result.technician}</div>
+          <button className = "btn btn-primary middle-btn result-component" onClick={GenerateResult}>Proceed to result</button>
         </li>
       ));
       // console.log(listItems);
@@ -35,10 +35,10 @@ class MyResults extends Component {
   render() {
     return (
       <div className="main-container">
-        <div className="padded-container">
+        <div className="padded-container-sides">
           <ul className="result-list">{this.listItems}</ul>
         </div>
-        <TestResult/>
+        {/* <TestResult/> */}
       </div>
     );
   }
