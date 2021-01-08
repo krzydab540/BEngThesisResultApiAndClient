@@ -45,6 +45,8 @@ namespace LaboratoryServer
                 };
             });
             services.AddMvc();
+            services.AddControllers().AddNewtonsoftJson();
+
 
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
