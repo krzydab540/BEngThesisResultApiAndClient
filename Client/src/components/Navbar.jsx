@@ -8,7 +8,7 @@ import Contact from '../pages/common/Contact';
 import Login from '../pages/common/Login';
 import Logout from '../pages/common/Logout';
 import MyResults from '../pages/common/MyResults';
-import TestResult from '../pages/common/TestResult';
+import Result from '../pages/common/Result';
 import Unauthorized from '../pages/common/Unauthorized';
 
 export default function Navbar() {
@@ -33,7 +33,7 @@ export default function Navbar() {
           <Route path='/logout' component={Logout} />
           <Route path='/myresults' component={MyResults} />
           <Route path='/unauthorized' component={Unauthorized} />
-          {/* <Route path='/testresult' component={TestResult} /> */}
+          <Route path='/result' component={Result} />
       </Switch>
     </div>
   </Router>
