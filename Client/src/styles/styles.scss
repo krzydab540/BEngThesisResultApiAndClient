@@ -123,7 +123,7 @@
   padding-top: 10vh;
 }
 
-.padded-container-sides{
+.padded-container-sides {
   padding-left: 10vw;
   padding-right: 10vw;
 }
@@ -135,20 +135,18 @@
 }
 .result-list-item {
   display: flex;
-  .result-component{ 
+  .result-component {
     margin: 5vh;
   }
-
 }
 
-.result-technician{
+.result-technician {
   width: 35vh;
   overflow-wrap: break-word;
-
 }
 
-.result-date{
-  width: 25vh;  
+.result-date {
+  width: 25vh;
 }
 
 .page {
@@ -156,23 +154,23 @@
   min-height: 29.7cm;
   padding: 2cm;
   margin: 1cm auto;
-  border: 1px #D3D3D3 solid;
+  border: 1px #d3d3d3 solid;
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.padding-center{
+.padding-center {
   padding-top: 10vh;
   text-align: center;
 }
 
-.spacer{
+.spacer {
   margin-top: 3vh;
   margin-bottom: 3vh;
 }
 
-.lock-icon{
+.lock-icon {
   margin-top: 10vh;
   margin-bottom: 10vh;
 }

@@ -10,7 +10,8 @@ const divStyle = {
   // padding: 10 ,
 };
 
-const hardText = "<div><h1>BLOOD ANALYSIS REPORT</h1><h3>Sample Hospital Laboratory, Gliwice Zwycięstwa St., 4/20</h3><table><tr><td>Result ID:</td><td>1</td></tr><tr><td>WBC:</td><td>4.1 × 10^3</td></tr><tr><td>RBC:</td><td>3.5 × 10^3</td></tr><tr><td>HGB:</td><td>9.8</td></tr><tr><td>HCT:</td><td>28.8</td></tr><tr><td>Platelets:</td><td><10 × 10^3</td></tr><tr><td>Segs (%):</td><td>53 %</td></tr><tr><td>Blasts (%):</td><td>7 %</td></tr><tr><td>Date:</td><td>12/03/2020</td></tr><tr><td>Conducted by:</td><td>dr Remigiusz Nałkowski</td></tr></table></div>"
+const hardText =
+  "<div><h1>BLOOD ANALYSIS REPORT</h1><h3>Sample Hospital Laboratory, Gliwice Zwycięstwa St., 4/20</h3><table><tr><td>Result ID:</td><td>1</td></tr><tr><td>WBC:</td><td>4.1 × 10^3</td></tr><tr><td>RBC:</td><td>3.5 × 10^3</td></tr><tr><td>HGB:</td><td>9.8</td></tr><tr><td>HCT:</td><td>28.8</td></tr><tr><td>Platelets:</td><td><10 × 10^3</td></tr><tr><td>Segs (%):</td><td>53 %</td></tr><tr><td>Blasts (%):</td><td>7 %</td></tr><tr><td>Date:</td><td>12/03/2020</td></tr><tr><td>Conducted by:</td><td>dr Remigiusz Nałkowski</td></tr></table></div>";
 
 class Result extends React.Component {
   constructor() {
@@ -21,7 +22,6 @@ class Result extends React.Component {
   componentDidMount() {
     var resultPromise = GenerateResult();
     resultPromise.then((response) => {
-      // textResult = response.htmlResult;
       this.setState({
         textResult: response.htmlResult,
       });
@@ -32,13 +32,23 @@ class Result extends React.Component {
     return (
       <div>
         <Pdf targetRef={ref} filename="Test_result.pdf">
-          {({ toPdf }) => <div className="middle-btn-wrapper"> <button className="btn btn-primary middle-btn" onClick={toPdf}>Download as PDF</button></div>}
+          {({ toPdf }) => (
+            <div className="middle-btn-wrapper">
+              {" "}
+              <button className="btn btn-primary middle-btn" onClick={toPdf}>
+                Download as PDF
+              </button>
+            </div>
+          )}
         </Pdf>
         <div ref={ref} className="page">
-          <div  style={divStyle}  dangerouslySetInnerHTML={{ __html: this.state.textResult }} />
+          <div
+            style={divStyle}
+            dangerouslySetInnerHTML={{ __html: this.state.textResult }}
+          />
         </div>
       </div>
     );
   }
 }
-export default Result
+export default Result;
