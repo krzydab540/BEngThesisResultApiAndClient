@@ -15,9 +15,6 @@ export default async function GenerateResult(idResult) {
     }),
   });
 
-  console.log("Generate Result - id result:");
-  // console.log(idResult);
-
   let result = await res.json();
   return result;
 }

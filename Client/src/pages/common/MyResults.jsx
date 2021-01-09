@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import GenerateResult from "./GenerateResult";
 import UserStore from "./stores/UserStore";
 import Result from "./Result";
@@ -20,27 +20,38 @@ class MyResults extends Component {
       });
 
       let listOfRes = await res.json();
-      console.log(listOfRes.results);
+      // console.log(listOfRes.results);
 
       this.listItems = listOfRes.results.map((result) => (
         <li className="result-list-item" key={result.idResult}>
           <div className="result-component">{result.idResult}</div>
+
           <div className="result-component result-date">
             {result.dateOfPerform}
           </div>
+
           <div className="result-component result-technician">
             {result.technician}
           </div>
+
           {/* <button className = "btn btn-primary middle-btn result-component" onClick={GenerateResult(result.idResult)}>Proceed to result</button> */}
-          <div className="btn btn-primary middle-btn result-component">
-            <Link
-              className="nav-link"
-              to={"/result"}
-              idResult={result.idResult}
-            >
-              Proceed to result
-            </Link>
-          </div>
+
+          {/* <div className="btn btn-primary middle-btn result-component">
+            <Link to="/myresults/:idResult"> Proceed to result </Link>
+          </div> */}
+
+          <Link to={{
+            pathname:'/result',
+            state:{
+              idResult: result.idResult
+            }
+          }}>
+              
+               Proceed to result </Link>
+          
+          
+          <Route exact path="/myresults/:idResult" component={Result} />
+
         </li>
       ));
     } catch (e) {

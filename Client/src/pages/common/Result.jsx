@@ -20,7 +20,11 @@ class Result extends React.Component {
   }
 
   componentDidMount() {
-    var resultPromise = GenerateResult();
+    
+    const { idResult} = this.props.location.state
+    console.log(idResult);
+
+    var resultPromise = GenerateResult(idResult);
     resultPromise.then((response) => {
       this.setState({
         textResult: response.htmlResult,
