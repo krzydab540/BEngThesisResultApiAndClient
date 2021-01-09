@@ -27,7 +27,7 @@ namespace LaboratoryServer.Controllers
             _context = context;
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpPost]
         public IActionResult GetResult([FromBody] idObject idObj)
         {
@@ -40,6 +40,7 @@ namespace LaboratoryServer.Controllers
             return response;
         }
 
+        [Authorize]
         [HttpPost]
         [Route("Specific")]
         public IActionResult GetSpecificResult([FromBody] idObject idObj)

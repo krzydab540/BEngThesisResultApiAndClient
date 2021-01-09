@@ -63,14 +63,6 @@ class LoginForm extends React.Component {
       localStorage.setItem("token", result.token);
       localStorage.setItem("userId", result.userId);
 
-      // if (result && result.success) {
-      //   UserStore.isLoggedIn = true;
-      //   UserStore.email = result.email;
-      // } else if (result && result.success === false) {
-      //   this.resetForm();
-      //   alert(result.msg); //TODO: Add message
-      // }
-
       if (result != null) {
         UserStore.isLoggedIn = true;
       }
