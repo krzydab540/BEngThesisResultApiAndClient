@@ -36,23 +36,20 @@ class MyResults extends Component {
 
           {/* <button className = "btn btn-primary middle-btn result-component" onClick={GenerateResult(result.idResult)}>Proceed to result</button> */}
 
-          {/* <div className="btn btn-primary middle-btn result-component">
-            <Link to="/myresults/:idResult"> Proceed to result </Link>
-          </div> */}
-
-          <Link to={{
-            pathname:'/result',
-            state:{
-              idResult: result.idResult
-            }
-          }}>
-              
-               Proceed to result </Link>
-          
-          
-          <Route exact path="/myresults/:idResult" component={Result} />
-
+          <div className="btn btn-primary middle-btn result-component">
+            <Link
+              to={{
+                pathname: "/result",
+                state: {
+                  idResult: result.idResult,
+                },
+              }}
+            >
+              Proceed to result
+            </Link>
+          </div>
         </li>
+
       ));
     } catch (e) {
       console.log(e);
