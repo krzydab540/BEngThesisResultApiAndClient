@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { render } from "@testing-library/react";
 import UserStore from "./stores/UserStore";
 import LoginForm from "./stores/LoginForm";
-import SubmitButton from "./stores/SubmitButton";
-import { observer } from 'mobx-react';
+import RedirectButton from "./RedirectButton";
+import { observer } from "mobx-react";
 
 class Login extends Component {
   async componentDidMount() {
@@ -38,7 +38,7 @@ class Login extends Component {
   async doLogout() {
     try {
       let res = await fetch(
-        "/logout", // requires API endpoint 
+        "/logout", // requires API endpoint
         {
           method: "post",
           headers: {
@@ -58,8 +58,7 @@ class Login extends Component {
     }
   }
 
-  render() {            
-    
+  render() {
     // TODO: Change to React Router to change views
     // TODO: Add validation to check if user is logged in => bearer token
     if (UserStore.loading) {
@@ -68,22 +67,16 @@ class Login extends Component {
           <div className="container">Loading, please wait</div>
         </div>
       );
-    }
-
-    else {
+    } else {
       if (UserStore.isLoggedIn) {
         return (
           <div className="app">
             <div className="container">
               Welcome {UserStore.userName}
-              <SubmitButton
-                text={"Log out"}
-                disabled={false}
-                onClick={() => this.doLogout}
-              ></SubmitButton>
+              <RedirectButton redirectTo={"Logout"} text={"Log out"} />
             </div>
           </div>
-        )
+        );
       }
     }
 
@@ -94,7 +87,6 @@ class Login extends Component {
         </div>
       </div>
     );
-
   }
 }
 

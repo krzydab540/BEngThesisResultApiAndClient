@@ -18,7 +18,7 @@ export default function Home() {
 
       <SideImage header="Quick and safe"
        text="Our laboratories are modern and professional, ensuring that the process is safe and comfortable for every patient." 
-       imageName="images/labworking1.jpg" />
+       imageLink="images/labworking1.jpg" />
 
        <RedirectButton redirectTo={"MyResults"} text={"Proceed to your results"}/>
     </div>

@@ -33,9 +33,11 @@ class LoginForm extends React.Component {
 
   async doLogin() {
     if (!this.state.email) {
+      alert("E-mail field is empty")
       return;
     }
     if (!this.state.password) {
+      alert("Password field is empty")
       return;
     }
     this.setState({
@@ -59,11 +61,15 @@ class LoginForm extends React.Component {
       let result = await res.json(); // here is the token
       console.log(result.token);
       console.log(result.userId);
+      
+      if(result.token===undefined){
+        alert("Invalid Credentials.")
+      }      
 
       localStorage.setItem("token", result.token);
       localStorage.setItem("userId", result.userId);
 
-      if (result != null) {
+      if (result != null && result.token!=undefined) {
         UserStore.isLoggedIn = true;
       }
     } catch (e) {

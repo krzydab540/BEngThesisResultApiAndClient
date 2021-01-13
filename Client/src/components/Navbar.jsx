@@ -35,10 +35,10 @@ export default function Navbar(props) {
           </ul>
           <ul className="nav-link-wrapper">
             <Link
-              to={localStorage.getItem("token") ? "/login" : "/logout"}
+              to={localStorage.getItem("token") ? "/logout" : "/login"}
               className="nav-link"
             >
-              {localStorage.getItem("token") ? "Log in" : "Log out"}
+              {localStorage.getItem("token") ? "Log out" : "Log in"}
             </Link>
           </ul>
           <ul></ul>
@@ -52,6 +52,7 @@ export default function Navbar(props) {
           <Route path="/logout" component={Logout} />
           <Route path="/myresults" component={MyResults} />
           <Route path="/unauthorized" component={Unauthorized} />
+          <Route path="/logout" component={Logout} />
 
           <Route exact path="/result" component={Result} />
 
